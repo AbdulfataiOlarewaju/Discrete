@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+    color: white;
+    cursor: pointer;
+}
+button {
+    color: white;
+}
+.btn {
+    @apply text-color-white bg-color-secondary rounded-md py-3 px-4 font-bold hover:opacity-90 ease-in duration-200;
+}
+.tittle {
+    @apply font-bold text-4xl text-white leading-snug mb-4;
+}
+.bob1 {
+    @apply bg-color-blob w-80 h-60 absolute z-10 top-20 -left-24 blur-2xl opacity-30 overflow-hidden rounded-full;
+}
+.bob2 {
+    @apply bg-color-secondary w-80 h-60 absolute z-10 bottom-5 -right-3 blur-2xl opacity-30 overflow-hidden rounded-full;
+}
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}

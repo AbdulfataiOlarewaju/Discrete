@@ -1,0 +1,188 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Fragment, useState } from "react"
+
+// function App() {
+  
+
+
+//   return (
+//     <body className="bg-color-primary-dark tracking-wider">
+//       <header>
+//         <nav className="container max-auto flex justify-between items-center">
+//           <div className="font-bold py-5 text-3xl">
+//             <a href="#HOME"><span className="text-color-secondary">Light</span>Code</a>
+//           </div>
+//          <div>
+//           <ul className="hidden lg:flex items-center space-x-6">
+//             <li><a id='hLink' href="#HOME" className="hover:text-color-secondary ease-in duration-200">Home</a></li>
+//             <li><a id='hLink' href="#FEATRUE"className="hover:text-color-secondary ease-in duration-200">Features</a></li>
+//             <li><a id='hLink' href="#TESTIMONY"className="hover:text-color-secondary ease-in duration-200">Testimony</a></li>
+//             <li><a id='hLink' href="#PRICING"className="hover:text-color-secondary ease-in duration-200">Pricing</a></li>
+//             <li><a id='hLink' href="#BLOG"className="hover:text-color-secondary ease-in duration-200">Blog</a></li>
+
+//             <li><button className="text-color-white bg-color-secondary rounded-md py-3 px-4 font-bold hover:opacity-90 ease-in duration-200">Free Trial</button></li>
+//           </ul>
+//          </div>
+         
+//          <div id='hamburger' className='lg:hidden text-color-secondary font-bold text-2xl cursor-pointer'>
+//           <FontAwesomeIcon icon={faBars} />
+//          </div>
+//          <div id='menu' className='bg-color-primary-dark h-[100vh] absolute inset-0 hidden'>
+//           <ul className='h-full grid place-items-center py-20'>
+//              <li><a href="#HOME" className="hover:text-color-secondary ease-in duration-200">Home</a></li>
+//             <li><a href="#FEATRUE"className="hover:text-color-secondary ease-in duration-200">Features</a></li>
+//             <li><a href="#TESTIMONY"className="hover:text-color-secondary ease-in duration-200">Testimony</a></li>
+//             <li><a href="#PRICING"className="hover:text-color-secondary ease-in duration-200">Pricing</a></li>
+//             <li><a href="#BLOG"className="hover:text-color-secondary ease-in duration-200">Blog</a></li>
+//             <li><button className="text-color-white bg-color-secondary rounded-md py-3 px-4 font-bold hover:opacity-90 ease-in duration-200">Free Trial</button></li>
+//           </ul>
+//          </div>
+//         </nav>
+//       </header>
+      
+//       </body>
+//   )
+// }
+// export default App
+
+
+function App() {
+  
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  return ( 
+    <Fragment>
+      <body className="bg-color-primary-dark tracking-wider">
+      <header>
+        <nav className="container mx-auto flex justify-between items-center px-4 py-5">
+          <div className="font-bold text-3xl">
+            <a href="#HOME">
+              <span className="text-color-secondary">Light</span>Code
+            </a>
+          </div>
+
+          {/* Desktop Menu */}
+          <ul className="hidden lg:flex items-center space-x-6">
+            <li>
+              <a href="#HOME" className="hover:text-color-secondary ease-in duration-200">Home</a>
+            </li>
+            <li>
+              <a href="#FEATURE" className="hover:text-color-secondary ease-in duration-200">Features</a>
+            </li>
+            <li>
+              <a href="#TESTIMONY" className="hover:text-color-secondary ease-in duration-200">Testimony</a>
+            </li>
+            <li>
+              <a href="#PRICING" className="hover:text-color-secondary ease-in duration-200">Pricing</a>
+            </li>
+            <li>
+              <a href="#BLOG" className="hover:text-color-secondary ease-in duration-200">Blog</a>
+            </li>
+            <li>
+              <button className="text-color-white bg-color-secondary rounded-md py-3 px-4 font-bold hover:opacity-90 ease-in duration-200">
+                Free Trial
+              </button>
+            </li>
+          </ul>
+
+          {/* Mobile Menu Icon */}
+          <div
+            id="hamburger"
+            className="lg:hidden text-color-secondary font-bold text-2xl cursor-pointer"
+            onClick={toggleMenu}
+          >
+            <FontAwesomeIcon  icon={menuOpen ? faTimes : faBars} />
+          </div>
+        </nav>
+
+        {/* Mobile Dropdown Menu */}
+        {menuOpen && (
+          <div
+            id="menu"
+            className="bg-color-primary-dark h-[100vh] absolute inset-0 z-10"
+          >
+            <ul className="h-full grid place-items-center py-20 space-y-6">
+              <li>
+                <a
+                  href="#HOME"
+                  className="hover:text-color-secondary ease-in duration-200"
+                  onClick={toggleMenu}
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#FEATURE"
+                  className="hover:text-color-secondary ease-in duration-200"
+                  onClick={toggleMenu}
+                >
+                  Features
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#TESTIMONY"
+                  className="hover:text-color-secondary ease-in duration-200"
+                  onClick={toggleMenu}
+                >
+                  Testimony
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#PRICING"
+                  className="hover:text-color-secondary ease-in duration-200"
+                  onClick={toggleMenu}
+                >
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#BLOG"
+                  className="hover:text-color-secondary ease-in duration-200"
+                  onClick={toggleMenu}
+                >
+                  Blog
+                </a>
+              </li>
+              <li>
+                <button className="btn" onClick={toggleMenu}>
+                  Free Trial
+                </button>
+              </li>
+            </ul>
+          </div>
+        )}
+      </header>
+    {/* </div> */}
+    <section id= "HOME" className='bg-color-primary-light'>
+      <div className = "container py-20">
+        <div className='flex flex-col items-center md:flex-row z-20'>
+        <div className='text-center mb-12 md:text-left border border-cyan-300 md:w-1/2 md:pr-10'>
+          <h1 className='font-bold text-4xl text-white leading-snug'>AweSome App for Your Finiancial</h1>
+          <p className='text-white leading-relaxed mb-10'>This should be used to tell a story and let your user know a little more about the App and its uses. how it can benefit them.</p>
+           <button className="btn" onClick={toggleMenu}>
+                  Free Trial
+           </button>
+        </div>
+        <div className='md:w-1/2'>
+          <img src="images/hero4.png" alt="" />
+        </div>
+        </div>
+      </div>
+    </section>
+    </body>
+    </Fragment>
+  );
+}
+
+export default App;
+
